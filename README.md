@@ -1,6 +1,6 @@
 zipcode-webservice
 ==================
-A simple web service that allows you to get the city, state, and lat/lng coordinates for a given zip code.
+A simple web service that allows you to get the city, state, and lat/lng coordinates for a given zip code. Information is returned as a JSON object
 
 Uses Sinatra/Ruby, PostgreSQL, and DataMapper. TDD is done with MiniTest.
 
