@@ -10,35 +10,35 @@ def app
 end
 
 describe "Zipcode Lookup" do
-	zip = Zipcode.get(15213)
-  it "should return the city Pittsburgh" do
-    zip.city.downcase.must_equal 'pittsburgh'
+	zip = Zipcode.get(10456)
+  it "should return the city Bronx" do
+    zip.city.downcase.must_equal 'bronx'
   end
 
-  it "should return the state PA" do
-    zip.state.upcase.must_equal 'PA'
+  it "should return the state NY" do
+    zip.state.upcase.must_equal 'NY'
   end
 
-  it "should return the latitude 40.43" do
-    zip.lat.must_equal 40.43
+  it "should return the latitude 40.84" do
+    zip.lat.must_equal 40.84
   end
 
-  it "should return the longitude -79.97" do
-    zip.lng.must_equal -79.97
+  it "should return the longitude -73.87" do
+    zip.lng.must_equal -73.87
   end
 
-  it "should say 15213 is not decommissioned" do
+  it "should say 10456 is not decommissioned" do
     refute zip.decommissioned?
   end
 
   it "should return json" do
-    get '/zipcode/15213'
+    get '/zipcode/10456'
     last_response.headers['Content-Type'].must_equal 'application/json'
   end
  
   it "should return the correct info about 15213 as json" do
-    get '/zipcode/15213'
-    obj = { zip: zip.zip, city: zip.city, state: zip.state, lat: zip.lat, lng: zip.lng }
+    get '/zipcode/10456'
+    obj = { city: zip.city, state: zip.state, lat: zip.lat, lng: zip.lng }
     obj.to_json.must_equal last_response.body
   end
  
