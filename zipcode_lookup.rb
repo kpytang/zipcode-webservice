@@ -9,5 +9,5 @@ DataMapper.finalize.auto_upgrade!
 get '/zipcode/:id' do
 	content_type :json
   zip = Zipcode.get(params[:id])
-  { zip: zip.zip, city: zip.city, state: zip.state, lat: zip.lat, lng: zip.lng }.to_json
+  { city: zip.city, state: zip.state, lat: zip.lat, lng: zip.lng }.to_json
 end
