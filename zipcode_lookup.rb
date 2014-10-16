@@ -3,7 +3,7 @@ require 'data_mapper'
 require	'./models/zipcode.rb'
 require 'json'
 
-DataMapper.setup(:default, 'postgres://localhost/geocode')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/geocode')
 DataMapper.finalize.auto_upgrade!
 
 get '/zipcode/:id' do
