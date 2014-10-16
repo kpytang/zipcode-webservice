@@ -1,6 +1,6 @@
 # contains all of the gems that used in this app
  
-source :rubygems
+source 'https://rubygems.org'
 gem 'sinatra', '1.3.1'
 gem 'activerecord', '3.2.13'
 gem 'data_mapper', '1.2.0'
